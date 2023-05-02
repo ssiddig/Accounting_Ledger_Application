@@ -10,15 +10,15 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class AccountLedgerApp {
 
-    //initialize scanner
+    // Create static scanner instance
     static Scanner scanner = new Scanner(System.in);
 
-
+    //Main method
     public static void main(String[] args){
     }
 
 
-    // Create static scanner instance
+    // Define constants for file names and dates
     private static final String Ledger_File = "transactions.txt";
     private static final String Ledger_Header = "Date, Descriptions, Amount";
     private static final String Date_Format = ("MM/dd/yyyy");
@@ -28,9 +28,10 @@ public class AccountLedgerApp {
 
 
     // Create static variable called Entries . It will be an ArrayList of (Dates, payments, deposits)
+        private static ArrayList<transactions> ledgerEntries = new ArrayList<transactions>();
 
 
-    // Create static scanner instance
+
 
 
 
@@ -48,6 +49,7 @@ public class AccountLedgerApp {
     // 0) Back-go back to the report page
     // H) Home-go back to the home page
 
+        //Show menu and user input
 
         do{
         System.out.println("\n== Main Menu");
@@ -57,27 +59,77 @@ public class AccountLedgerApp {
         System.out.println("(Q) Quit");
         System.out.println("Enter Option: ");
         String input=scanner.nextLine().toUpperCase();
+
+
         switch (input){
-            case"1":
-                addDeposits(scanner,ledgerentries);
+
+            //create switch statement that handles cases related to each menu item
+            //Case 1: Add Deposits(D)
+            case"D":
+                addDeposits();
+                break;
+
+            //prompt the user for the deposit information and save it to csv file
+            //Case 2: Make Payment(P)
+            case "P":
+                makePayments();
+                break;
+
+            //prompt user for debit information and save it to csv file
+            //Case 3: Ledger(L)
+            case"L":
+                showLedgerMenu();
+                break;
+
+            //create a do-while loop that runs unless enters "Q"
+            case "Q":
+                System.out.println("Exit application");
+                break;
+            default:
+
+                System.out.println("Invalid input. Please try again.");
+                break;
+
         }
-    }while
+        //Handle user inputs using switch statements
+    }
+
+      ///implement methods
+    private void addDeposits() {
+    }
+
+    private void makePayments() {
+    }
+
+    private void showLedgerMenu() {
+    }
 
 
 
-    //create main menu:
-    //initialize variable for user input
-    //Show prompt for user showing the possible options and asking for an input
-    //create a do-while loop that runs unless enters "Q"
-    //create switch statement that handles cases related to each menu item
-    //Case 1: Add Deposits(D)
-    //prompt the user for the deposit information and save it to csv file
-    //Case 2: Make Payment(P)
-    //prompt user for debit information and save it to csv file
-    //Case 3: Ledger(L)
+        while (!input.equals(Q));
+
+        //Close scanner when complete
+        scanner.close();
+
+
+
+
+
+
+
+
+
     //Display Ledger Submenu
-    //Case 4: Exit
-    // the application
+
+        System.out.println("\n== Ledger Menu");
+        System.out.println("(A) All");
+        System.out.println("(D) Deposits");
+        System.out.println("(P) Payments");
+        System.out.println("(R) Reports");
+        System.out.println("(H) Home");
+        System.out.println("Enter Option: ");
+        input = scanner.nextLine().toUpperCase();
+
 
 //        ledger menu:
 //        create method for ledger menu
