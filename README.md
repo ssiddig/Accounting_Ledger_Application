@@ -1,5 +1,15 @@
 # Accounting_Ledger_Application
- // Create switch statement that handles cases related to each menu item
+//Create Static Array List for transactions with the following (Date:, String, String, Int)
+    //Create transaction public class
+    // Create static variable called Entries. It will be an ArrayList of Transactions
+    // create static variable for Payments
+    //
+
+
+            //Create Main menu
+        // Show prompt for user showing the possible options and asking for an input
+        // Create do-while loop that runs unless the user enters “Q"\
+        // Create switch statement that handles cases related to each menu item
         //Case 1 Add Deposit(D)
         //prompt the user for deposit information and save to CSV file
         //Case "2" Make Payment (P)
